@@ -34,12 +34,12 @@
         <dependency>
             <artifactId>simple-json-rpc-server</artifactId>
             <groupId>com.github.arteam</groupId>
-            <version>0.11-SNAPSHOT</version>
+            <version>0.10</version>
         </dependency>
         <dependency>
             <artifactId>simple-json-rpc-client</artifactId>
             <groupId>com.github.arteam</groupId>
-            <version>0.11-SNAPSHOT</version>
+            <version>0.10</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
