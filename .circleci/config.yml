@@ -6,4 +6,5 @@ jobs:
       - image: circleci/openjdk:8-jdk-stretch
     steps:
       - checkout
-      - run: mvn clean install
+      - run: |
+          mvn clean install
