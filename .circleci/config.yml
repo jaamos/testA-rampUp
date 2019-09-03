@@ -6,17 +6,5 @@ jobs:
       - image: circleci/openjdk:8-jdk-stretch
     steps:
       - checkout
-      - run: mvn clean install
-  merge:
-    working_directory: ~/circleci-alationTestA
-    docker:
-      - image: circleci/openjdk:8-jdk-stretch
-    steps:
       - run: |
-          git checkout master
-          git pull
-          git checkout develop
-          git pull
-          git rebase -i master
-          git checkout master
-          git merge develop
+          mvn clean install
