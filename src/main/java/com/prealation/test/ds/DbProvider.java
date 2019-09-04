@@ -18,16 +18,18 @@ public class DbProvider {
     static MongoDatabase database;
 
     static {
-        mongoClient = MongoClients.create(
-                MongoClientSettings.builder()
-                        .applyToClusterSettings(builder ->
-                                builder.hosts(Arrays.asList(
-                                        new ServerAddress(Configuration.config().get("db.host").toString(), Integer.valueOf(Configuration.config().get("db.port").toString()))
-                                )))
-                        .build());
+        if (Boolean.valueOf(Configuration.config().getProperty("enable.db"))) {
+            mongoClient = MongoClients.create(
+                    MongoClientSettings.builder()
+                            .applyToClusterSettings(builder ->
+                                    builder.hosts(Arrays.asList(
+                                            new ServerAddress(Configuration.config().get("db.host").toString(), Integer.valueOf(Configuration.config().get("db.port").toString()))
+                                    )))
+                            .build());
 
-        database = mongoClient.getDatabase(Configuration.config().get("db.database").toString());
-        log.info("database: " + database);
+            database = mongoClient.getDatabase(Configuration.config().get("db.database").toString());
+            log.info("database: " + database);
+        }
     }
 
     public static MongoDatabase connection() {
