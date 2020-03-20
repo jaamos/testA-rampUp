@@ -11,7 +11,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <log4j.version>2.12.1</log4j.version>
-        <mongodb.driver.version>3.11.0</mongodb.driver.version>
+        <mongodb.driver.version>4.0.1</mongodb.driver.version>
         <snakeyaml.version>1.25</snakeyaml.version>
     </properties>
 
